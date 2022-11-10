@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>
+        <lightning-progress-indicator current-step={currentStep} type="path" variant="base">
+            <template for:each={pages} for:item="page">
+                <lightning-progress-step key={page.label} label={page.label} value={page.value}>
+                </lightning-progress-step>
+            </template>
+        </lightning-progress-indicator>
+        <lightning-card>
+            <template if:true={componentVisibilityMatrix.showFirst}>
+                <slot name='1' onprivateitemregister={handleChildRegister}></slot>
+            </template>
+            <template if:true={componentVisibilityMatrix.showSecond}>
+                <slot name='2' onprivateitemregister={handleChildRegister}></slot>
+            </template>
+            <template if:true={componentVisibilityMatrix.showThird}>
+                <slot name='3' onprivateitemregister={handleChildRegister}></slot>
+            </template>
+            <template if:true={componentVisibilityMatrix.showForth}>
+                <slot name='4' onprivateitemregister={handleChildRegister}></slot>
+            </template>
+            <template if:true={componentVisibilityMatrix.showFifth}>
+                <slot name='5' onprivateitemregister={handleChildRegister}></slot>
+            </template>
+            <template if:true={componentVisibilityMatrix.showSixth}>
+                <slot name='6' onprivateitemregister={handleChildRegister}></slot>
+            </template>
+
+        </lightning-card>
+        <p slot="footer">
+            <template if:true={isEnablePrev}>
+                <lightning-button variant="brand" label="Back" onclick={handlePrev}></lightning-button>
+            </template>
+            <template if:true={isEnableNext}>
+                <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+            </template>
+            <template if:true={isEnableFinish}>
+                <lightning-button label="Finish" variant="brand" onclick={handleFinish}></lightning-button>
+            </template>
+        </p>
+    </lightning-card>
+</template>
