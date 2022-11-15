@@ -4,8 +4,8 @@
 
 # Structure and Code Flow
 
-1. ***LWCWizard*** has slots configured. Every Passing Markup has to raise an event to register itself in slot.
-2. ***testChildLwc*** is the sample child component, which is raising the event in ***connectedCallback*** to register itself to parent wizard.
+1. ***LWCWizard*** has a slot configured. Once all markups have been passed, onSlotChange will run and all Markups will be registered in Memory. 
+2. ***testChildLwc*** is the sample child component, that registers itself to parent wizard.
 3. ***testLWC*** is a sample LWC for testing.
 
 # References
