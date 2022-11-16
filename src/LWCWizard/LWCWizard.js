@@ -1,6 +1,6 @@
 import {LightningElement, track} from 'lwc';
 
-export default class CpqQuoteSetupWizard extends LightningElement {
+export default class LWCWizard extends LightningElement {
   @track
   currentStep = '1';
   @track
