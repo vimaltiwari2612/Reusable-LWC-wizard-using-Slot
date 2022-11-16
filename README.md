@@ -5,8 +5,14 @@
 # Structure and Code Flow
 
 1. ***LWCWizard*** has a slot configured. Once all markups have been passed, onSlotChange will run and all Markups will be registered in Memory. 
-2. ***testChildLwc*** is the sample child component, that registers itself to parent wizard.
-3. ***testLWC*** is a sample LWC for testing.
+2. ***childLwc*** is the sample child component, that registers itself to parent wizard.
+3. ***Container*** is a sample LWC for testing the wizard and children.
+
+LWCWizard Expects following attributes from each child
+- frame : a unique number of Child Component
+- name : name of Child component
+- validate() : method defined in child component, in case some validation needs to be called by wizard on a perticular child component 
+- handle onwizardfinish event : the parent container of wizard will handle this event. This event gets fired by wizard, once we reach last screen and click finish.
 
 # References
 
