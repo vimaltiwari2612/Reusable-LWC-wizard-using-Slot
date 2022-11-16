@@ -11,17 +11,18 @@
         </lightning-card>
         <p slot="footer">
             <template if:true={isEnablePrev}>
-                <lightning-button variant="brand" label="Back" onclick={handlePrev} class="slds-m-left_x-small">
+                <lightning-button variant="brand" label="Back" onclick={handlePrev} class="slds-m-right_x-small">
                 </lightning-button>
             </template>
             <template if:true={isEnableNext}>
-                <lightning-button label="Next" variant="brand" onclick={handleNext} class="slds-m-left_x-small">
+                <lightning-button label="Next" variant="brand" onclick={handleNext} class="slds-m-right_x-small">
                 </lightning-button>
             </template>
             <template if:true={isLastScreen}>
-                <lightning-button label="Validate" variant="brand" onclick={handleValidate}
-                    class="slds-m-left_x-small"></lightning-button>
+                <lightning-button label="Finish" variant="brand" onclick={handleFinish}
+                    class="slds-m-right_x-small"></lightning-button>
             </template>
         </p>
+
     </lightning-card>
 </template>
