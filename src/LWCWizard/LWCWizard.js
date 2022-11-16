@@ -8,10 +8,11 @@ export default class CpqQuoteSetupWizard extends LightningElement {
 
   SHOW_FRAME = '';
   HIDE_FRAME = 'slds-hide';
+  SELECTOR = '*';
 
   validate() {
     let currentScreen = this.getCurrentScreen();
-    return (currentScreen) ? currentScreen.validate() : true;
+    return (currentScreen && currentScreen.validate) ? currentScreen.validate() : true;
   }
 
   updateCurrentFrameVisibility(className) {
@@ -20,7 +21,7 @@ export default class CpqQuoteSetupWizard extends LightningElement {
   }
 
   getAllScreens() {
-    return this.querySelectorAll('*');
+    return this.querySelectorAll(this.SELECTOR);
   }
 
   getCurrentScreen() {
@@ -55,6 +56,10 @@ export default class CpqQuoteSetupWizard extends LightningElement {
     this.updateCurrentFrameVisibility(this.SHOW_FRAME);
   }
 
+  raiseFinishEvent() {
+    const finishEvent = new CustomEvent('wizardfinish', {detail: true});
+    this.dispatchEvent(finishEvent);
+  }
 
   get isEnableNext() {
     return parseInt(this.currentStep) != this.pages.length;
@@ -81,7 +86,8 @@ export default class CpqQuoteSetupWizard extends LightningElement {
     this.updateCurrentFrameVisibility(this.SHOW_FRAME);
   }
 
-  handleValidate() {
-    this.validate();
+  handleFinish() {
+    if (!this.validate()) return;
+    this.raiseFinishEvent();
   }
 }
