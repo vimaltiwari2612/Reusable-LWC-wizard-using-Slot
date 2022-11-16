@@ -1,7 +1,7 @@
 import LightningAlert from 'lightning/alert';
 import {api, LightningElement, track} from 'lwc';
 
-export default class TestChildLwc extends LightningElement {
+export default class ChildLwc extends LightningElement {
   @api
   frame;
   @api
