@@ -1,22 +1,22 @@
 <template>
     <lightning-card variant="Narrow">
-        <c-cpq-quote-setup-wizard onwizardfinish={handleFinish}>
-            <c-test-child-lwc frame="1" name="Step 1" onsharedata={handleSharedData}>
+        <c-lwc-wizard onwizardfinish={handleFinish}>
+            <c-child-lwc frame="1" name="Step 1" onsharedata={handleSharedData}>
                 <lightning-input type="text" label="Enter some text for Step 1" value={text} onchange={handleChange}>
                 </lightning-input>
-            </c-test-child-lwc>
-            <c-test-child-lwc frame="2" name="Step 2" onsharedata={handleSharedData}>
+            </c-child-lwc>
+            <c-child-lwc frame="2" name="Step 2" onsharedata={handleSharedData}>
                 <lightning-input type="text" label="Enter some text for Step 2" value={text} onchange={handleChange}>
                 </lightning-input>
-            </c-test-child-lwc>
-            <c-test-child-lwc frame="3" name="Step 3" onsharedata={handleSharedData}>
+            </c-child-lwc>
+            <c-child-lwc frame="3" name="Step 3" onsharedata={handleSharedData}>
                 <lightning-input type="text" label="Enter some text for Step 3" value={text} onchange={handleChange}>
                 </lightning-input>
-            </c-test-child-lwc>
-            <c-test-child-lwc frame="4" name="Step 4" onsharedata={handleSharedData}>
+            </c-child-lwc>
+            <c-child-lwc frame="4" name="Step 4" onsharedata={handleSharedData}>
                 <lightning-input type="text" label="Enter some text for Step 4" value={text} onchange={handleChange}>
                 </lightning-input>
-            </c-test-child-lwc>
-        </c-cpq-quote-setup-wizard>
+            </c-child-lwc>
+        </c-lwc-wizard>
     </lightning-card>
 </template>
