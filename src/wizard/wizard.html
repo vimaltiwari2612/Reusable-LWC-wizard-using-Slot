@@ -1,0 +1,30 @@
+<template>
+    <lightning-card class="slds-card slds-relative">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </template>
+        <lightning-progress-indicator current-step={currentStep} type="path" variant="base">
+            <template for:each={pages} for:item="page">
+                <lightning-progress-step key={page.label} label={page.label} value={page.value}>
+                </lightning-progress-step>
+            </template>
+        </lightning-progress-indicator>
+        <slot onslotchange={handleSlotChange}></slot>
+        <p slot="footer" class="button_allign slds-docked-form-footer">
+            <template if:true={isEnableBack}>
+                <lightning-button variant="brand" label="Back" onclick={handleBack} class="slds-float_left">
+                </lightning-button>
+            </template>
+            <template if:true={isEnableNext}>
+                <lightning-button label="Continue" variant="brand" onclick={handleNext}
+                    class="slds-m-left_xx-small slds-float_left">
+                </lightning-button>
+            </template>
+            <template if:true={isLastScreen}>
+                <lightning-button label="Finish" variant="brand" onclick={handleFinish}
+                    class="slds-m-left_x-small slds-float_left">
+                </lightning-button>
+            </template>
+        </p>
+    </lightning-card>
+</template>

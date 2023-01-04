@@ -1,0 +1,14 @@
+.slds-card {
+    border: none;
+}
+
+.slds-card__header {
+    display: none;
+    padding: inherit;
+}
+
+.button_allign {
+    padding-left: 0.5rem;
+    justify-content: left;
+    background : inherit;
+}
